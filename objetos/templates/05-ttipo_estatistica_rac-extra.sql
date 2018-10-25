@@ -1,0 +1,18 @@
+INSERT INTO  TTIPO_ESTATISTICA_RAC VALUES (6, 6, 'COMMITS', 'user commits', 'Número de commits. Quando um commit e feito, o redo (que reflete as mudancas feitas no banco) deve ser gravado em disco. Junto à estatistica de rollback, pode ser utilizado para calculo da taxa de transacões de um usuario');
+INSERT INTO  TTIPO_ESTATISTICA_RAC VALUES (7, 7, 'ROLLBACKS', 'user rollbacks', 'Número de rollbacks executados manualmente ou causados por erros. A estatistica pode indicar queries, transacões ou recursos problematicos');
+INSERT INTO  TTIPO_ESTATISTICA_RAC VALUES (8, 8, 'CHAMADAS', 'user calls', 'Número de chamadas de usuario como login, parse, fetch ou execute. Ao determinar atividade do banco, a taxa de user calls / RPI calls e um indicativo de quanto trabalho interno e gerado como resultado do tipo de requisicao que o usuario envia ao Oracle');
+INSERT INTO  TTIPO_ESTATISTICA_RAC VALUES (29, 27, 'TEMPO CONEXAO', 'session connect time', 'Número de SEGUNDOS desde 01/01/1970 00:00:00 GMT que o usuario esta conectado na sessao.
+  Tempo de conexao = ROUND((CAST(SYS_EXTRACT_UTC(SYSTIMESTAMP) AS DATE) - TO_DATE(''01/01/1970 00:00:00'', ''DD/MM/YYYY HH24:MI:SS''))*24*3600) - GV$SESSTAT.VALUE[session connect time]
+  ou 
+  GV$SESSION.LOGON_TIME = SELECT (TIMESTAMP ''1970-01-01 00:00:00 GMT'' + NUMTODSINTERVAL(GV$SESSTAT.VALUE[session connect time], ''SECOND'')) AT TIME ZONE ''AMERICA/Sao_Paulo'' AS "Tempo Conexao" FROM DUAL');
+INSERT INTO  TTIPO_ESTATISTICA_RAC VALUES (37, 35, 'MEMORIA PGA', 'session pga memory', 'Utilizacao atual de memoria de uma sessao. Útil apenas na vista V$SESSTAT, nao tendo significado na vista V$SYSSTAT');
+INSERT INTO  TTIPO_ESTATISTICA_RAC VALUES (38, 36, 'MEMORIA PGA MAX', 'session pga memory max', 'Pico de utilizacao de memoria de uma sessao. Útil apenas na vista V$SESSTAT, nao tendo significado na vista V$SYSSTAT');
+INSERT INTO  TTIPO_ESTATISTICA_RAC VALUES (94, 78, 'LEITURAS FISICAS', 'physical reads', 'Número total de blocos de dados lidos do disco. O valor pode ser maior que "physical reads direct" + "physical reads cache", uma vez que as leituras de processos privados tambem sao incluidas nessa estatistica');
+INSERT INTO  TTIPO_ESTATISTICA_RAC VALUES (95, 79, 'LEITURAS FISICAS CACHE', 'physical reads cache', 'Número de blocos de dados lidos do disco para o buffer cache. e um subconjunto da estatistica "physical reads"');
+INSERT INTO  TTIPO_ESTATISTICA_RAC VALUES (98, 82, 'LEITURAS FISICAS REQUISICOES IO', 'physical read IO requests', 'Número de requisicões de leitura para atividades de aplicacao (buffer cache + direct loads) que fizeram a leitura de um ou mais blocos por requisicao. e um subconjunto da estatistica "physical read total IO requests"');
+INSERT INTO  TTIPO_ESTATISTICA_RAC VALUES (105, 89, 'ESCRITAS FISICAS', 'physical writes', 'Número total de blocos de dados escritos em disco. Essa estatistica e a soma dos valores de "physical writes direct" + "physical writes from cache"');
+INSERT INTO  TTIPO_ESTATISTICA_RAC VALUES (107, 91, 'ESCRITAS FISICAS DA CACHE', 'physical writes from cache', 'Número total de blocos de dados escritos do buffer cache para o disco. e um subconjunto da estatistica "physical writes"');
+INSERT INTO  TTIPO_ESTATISTICA_RAC VALUES (108, 92, 'ESCRITAS FISICAS REQUISICOES IO', 'physical write IO requests', 'Número de requisicões de escrita para atividades de aplicacao (buffer cache + direct loads) que modificaram um ou mais blocos por requisicao.');
+INSERT INTO  TTIPO_ESTATISTICA_RAC VALUES (630, 589, 'SQLNET', 'bytes sent via SQL*Net to client', 'Total de bytes enviados ao cliente');
+COMMIT;
+QUIT;

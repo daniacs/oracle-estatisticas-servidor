@@ -1,0 +1,11 @@
+TESTATISTICAS_RAC                 03-testatisticas_rac.sql
+TESTATISTICAS_RAC_TMP             04-testatisticas_rac_tmp.sql
+TTIPO_ESTATISTICA_RAC             05-ttipo_estatistica_rac.sql
+TESTATISTICAS_EVENTOS             06-testatisticas_eventos.sql
+TDW_ESTATISTICAS_RAC              07-tdw_estatisticas_rac.sql
+TTIPO_ESTATISTICA_CLASSES         08-ttipo_estatistica_classes.sql
+TTIPO_ESTATISTICA_SYSSTAT         09-ttipo_estatistica_sysstat.sql
+TESTATISTICAS_SYSSTAT             10-testatisticas_sysstat.sql
+TTIPO_ESTATISTICA_TIME_MODEL      11-ttipo_estatistica_time_model.sql
+TESTATISTICAS_SYS_TIME_MODEL      12-testatisticas_sys_time_model.sql
+TESTATISTICAS_DISKGROUPS          13-asm-diskgroups.sql

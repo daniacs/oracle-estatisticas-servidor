@@ -1,0 +1,24 @@
+SCRIPT CRON 01-roda-amostragem.sh
+SCRIPT FILE 01-roda-amostragem.sql
+SCRIPT CRON 02-sumariza-amostragem.sh
+SCRIPT FILE 02-sumariza-amostragem.sql
+SCRIPT FILE 02-sumariza-amostragem.pl
+SCRIPT FILE 03-check_diskgroup.pl
+SCRIPT FILE 09-gera-senha.pl
+SCRIPT FILE 10-analisa-sessoes.pl
+SCRIPT FILE 10-analisa-sessoes.sh
+SCRIPT DIR  lib
+OBJETO P/PROSETANOMEMODULO              04-prosetanomemodulo.sql
+OBJETO T/TRG_LOGON                      05-trg-logon.sql
+OBJETO T/TRG_LOGOFF                     06-trg-logoff.sql
+OBJETO P/PROGASTOSESTATISTICANOPERIODO  07-progastosestatisticanoperiodo.sql
+OBJETO P/PRO_TOTAIS_ESTATISTICAS_RAC    08-pro_totais_estatisticas_rac.sql
+
+# Agendamentos do crontab
+ENTRY 01-roda-amostragem.sh 3,13,23,33,43,53  7-19  @ @ @
+ENTRY 01-roda-amostragem.sh 00,30             20-23,00-06 @ @ @
+ENTRY 02-sumariza-amostragem.sh 15 22 @ @ @
+ENTRY 02-sumariza-amostragem-perl.sh @/10 @ @ @ @+CURRENT
+ENTRY 02-sumariza-amostragem-perl.sh 30 22 @ @ @+WORKTIME
+ENTRY 02-sumariza-amostragem-perl.sh 05 00 @ @ @+FULLDAY
+ENTRY 10-analisa-sessoes.sh @/5  @ @ @ @

@@ -1,0 +1,27 @@
+Teste da procedure PROSETANOMEMODULO.
+
+O programa java conecta no Oracle com diversos nomes diferentes de modulo:
+
+1. Faz um sleep de n segundos (ver codigo fonte)
+2. Faz um sleep de n segundos com o nome APPTESTE0    (nao gasta CPU)
+3. Faz um teste de stress de CPU com o nome APPTESTE1 (gasta CPU)
+4. Faz um teste de stress de CPU com o nome APPTESTE2 (gasta CPU)
+5. Faz um sleep de n segundos com o nome de APPTESTE3 (nao gasta CPU)
+
+
+**************** INSTALACAO *****************
+
+1) Compilar os objetos do Oracle no arquivo oracle_cpu_stress.sql
+sqlplus usuario@instancia @oracle_cpu_stress.sql
+
+2) Alterar o usuario e senha no arquivo Prosetanomemodulo.java
+
+3) Compilar e executar o java.
+javac -cp .:ojdbc14.jar Prosetanomemodulo.java
+java -cp .:ojdbc14.jar Prosetanomemodulo
+
+4) Se for testar em modo texto, recompilar a PROSETANOMEMODULO com os 
+parametros de TO_NUMBER sem o segundo parametro ('XXXX').
+
+5) Verificar se o Oracle criou registros de estatisticas com o evento 2
+SELECT DISTINCT EVENT FROM TESTATISTICAS_RAC;
