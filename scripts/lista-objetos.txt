@@ -4,6 +4,8 @@ SCRIPT CRON 02-sumariza-amostragem.sh
 SCRIPT FILE 02-sumariza-amostragem.sql
 SCRIPT FILE 02-sumariza-amostragem.pl
 SCRIPT FILE 03-check_diskgroup.pl
+#SCRIPT CRON 04-roda-amostragem-objeto.sh
+#SCRIPT FILE 04-roda-amostragem-objeto.sql
 SCRIPT FILE 09-gera-senha.pl
 SCRIPT FILE 10-analisa-sessoes.pl
 SCRIPT FILE 10-analisa-sessoes.sh

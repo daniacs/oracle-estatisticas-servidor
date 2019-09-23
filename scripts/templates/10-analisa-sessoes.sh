@@ -7,4 +7,4 @@ if [ $HORA -ge 7 ]; then
 fi
 
 cd @SCRIPTS_DIR_STR@
-@SCRIPTS_DIR_STR@/analisa_sessoes.pl $OPTS
+@SCRIPTS_DIR_STR@/analisa-sessoes.pl $OPTS

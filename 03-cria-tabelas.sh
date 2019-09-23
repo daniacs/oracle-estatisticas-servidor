@@ -5,7 +5,7 @@
 echo "*********************** $0 ************************"
 
 ARQ_LISTA="objetos/lista-objetos.txt"
-LISTA_TABELAS=`cat $ARQ_LISTA | awk '{print $1}' |
+LISTA_TABELAS=`cat $ARQ_LISTA | grep -v '^#' | awk '{print $1}' |
   sed "s/\([A-Z0-9_]*\)/'\1'/g" | tr '\n' ',' | sed 's/,$//'`;
 LISTA_TABELAS_SQL=`cat $ARQ_LISTA | awk '{print $2}'`
 TMPFILE=`mktemp`

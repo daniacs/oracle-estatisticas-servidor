@@ -113,12 +113,11 @@ if [ "$REMOVE_TABLESPACE" = "s" -o "$REMOVE_TABLESPACE" = "S" ]; then
       $SQL;
       QUIT;
 EOF
+  # Em teoria ja deveria ter sido removido no comando DROP TABLESPACE ...
+  rm -fv $TS_DATAFILE >>$LOG
 else
   echo "Tablespace $TS_NAME nao removida"
 fi
-
-# Em teoria ja deveria ter sido removido no DROP TABLESPACE ...
-rm -fv $TS_DATAFILE >>$LOG
 
 # Remocao dos scripts
 if [ "$SCRIPTS_DIR" != "" ]; then

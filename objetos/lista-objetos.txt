@@ -9,3 +9,4 @@ TESTATISTICAS_SYSSTAT             10-testatisticas_sysstat.sql
 TTIPO_ESTATISTICA_TIME_MODEL      11-ttipo_estatistica_time_model.sql
 TESTATISTICAS_SYS_TIME_MODEL      12-testatisticas_sys_time_model.sql
 TESTATISTICAS_DISKGROUPS          13-asm-diskgroups.sql
+#TESTATISTICAS_SEGMENTOS           14-testatisticas_segmentos.sql
